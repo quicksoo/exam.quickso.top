@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f5">
+  <meta name="description" content="QuickSo 考试时钟是一款免费的考试倒计时与考场时钟工具。设置考试名称、起止时间和考试须知，支持大字时钟、全屏投屏、结束提示音及单 HTML 离线导出，适合教室大屏和监考使用。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://exam.quickso.top/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="考试倒计时与考场时钟 · QuickSo 考试时钟">
+  <meta property="og:description" content="免费的全屏考试时钟，支持考试设置、大字时钟、倒计时进度条、结束提醒与单文件离线导出。">
+  <meta property="og:url" content="https://exam.quickso.top/">
+  <meta property="og:site_name" content="QuickSo">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://quickso.top/icon.jpg">
+  <meta property="og:image:alt" content="QuickSo 品牌图标">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="考试倒计时与考场时钟 · QuickSo 考试时钟">
+  <meta name="twitter:description" content="设置考试信息，全屏显示考场时钟与倒计时，一键导出 HTML 离线使用。">
+  <meta name="twitter:image" content="https://quickso.top/icon.jpg">
+  <title>考试倒计时与考场时钟 - 全屏考试时钟、离线导出 | QuickSo</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "@id": "https://exam.quickso.top/#app",
+      "name": "QuickSo 考试时钟",
+      "url": "https://exam.quickso.top/",
+      "description": "免费的考试倒计时与考场时钟工具，支持设置考试名称、起止时间和考试须知，全屏投屏、考试结束提醒及单 HTML 离线导出。",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "zh-CN",
+      "isAccessibleForFree": true,
+      "featureList": ["考试名称与起止时间设置", "考试须知展示", "大字考场时钟", "考试倒计时进度条", "全屏投屏", "考试结束提示音", "单 HTML 文件离线导出"],
+      "publisher": { "@type": "Organization", "name": "QuickSo", "url": "https://quickso.top/" }
+    }
+  </script>
+  <style>
+    :root{color-scheme:light;--bg:#f4f6f5;--surface:#fff;--ink:#203b34;--muted:#76847e;--line:#e2e8e4;--accent:#21765b;--soft:#edf5ef;--danger:#ba4939;--shadow:0 20px 80px #163b2920;font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}button,input,textarea,select{outline-offset:4px}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #63ab8a}button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:9px 14px;font-size:13px;font-weight:600;transition:background .15s}button:hover{background:var(--soft)}button svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.primary{background:var(--accent);border-color:var(--accent);color:#fff}.primary:hover{background:#185f48}.quiet{border:0;background:transparent;padding:6px 9px;color:var(--muted)}.icon-button{width:38px;min-height:38px;padding:8px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
+    .toolbar{height:78px;padding:0 42px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);background:var(--surface)}.brand{display:flex;align-items:center;gap:17px;white-space:nowrap}.wordmark{font-size:23px;letter-spacing:-1.1px;font-weight:750;color:var(--accent)}.brand-divider{height:19px;width:1px;background:var(--line)}.brand-name{font-size:14px;font-weight:600}.toolbar-actions{display:flex;align-items:center;gap:9px}.edition{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px;margin-right:12px}.edition:before{content:"";width:6px;height:6px;border-radius:50%;background:#4e9c78}
+    .workspace{max-width:1600px;margin:auto;padding:38px 42px 20px}.exam-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:27px}.exam-identity{flex:1;min-width:0}.eyebrow{font-size:11px;letter-spacing:2.5px;font-weight:650;color:var(--muted);margin:0 0 10px}.exam-title-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 28px}.exam-title{font-size:clamp(28px,2.8vw,40px);font-weight:650;letter-spacing:-.8px;line-height:1.4;margin:0;overflow-wrap:anywhere;max-width:100%}.schedule{display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:clamp(17px,1.5vw,24px);line-height:1.6}.schedule>span{display:inline-flex;align-items:center;gap:9px}.schedule svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;flex-shrink:0}.schedule .divider{width:1px;height:1em;background:var(--line)}.status{display:flex;gap:8px;align-items:center;background:#e7f0e9;color:var(--accent);padding:8px 12px;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap;margin-bottom:10px}.status-dot{height:6px;width:6px;border-radius:50%;background:currentColor}
+    .board{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(290px,1fr);gap:22px;align-items:stretch;min-height:clamp(400px,56svh,620px)}.clock-panel,.notice-panel{border:1px solid var(--line);border-radius:14px;background:var(--surface)}.clock-panel{position:relative;display:grid;align-items:center;container-type:inline-size;min-width:0;padding-right:78px;overflow:hidden}.clock-main{text-align:center;padding:40px 20px}.clock-heading{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:8px 14px}.section-label{font-size:18px;font-weight:600;letter-spacing:.3px;line-height:1.6;color:var(--ink);margin:0;white-space:nowrap}.clock{font-family:"Segoe UI",Arial,sans-serif;font-size:clamp(42px,10vw,180px);font-size:clamp(42px,18cqi,180px);font-weight:600;letter-spacing:-.055em;font-variant-numeric:tabular-nums;line-height:1.3;margin:18px 0 13px;white-space:nowrap}.clock-date{display:inline-flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:6px 14px;font-size:18px;font-weight:500;letter-spacing:0;line-height:1.6;color:var(--ink);margin:0}.clock-date>span{white-space:nowrap}.clock-date::before{content:"·";color:var(--muted)}.countdown-area{position:absolute;top:28px;right:16px;bottom:28px;width:48px;display:flex;flex-direction:column;align-items:center;--route-color:var(--accent)}.route-time{font-size:14px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.5;text-align:center;white-space:nowrap}.progress{position:relative;flex:1;width:12px;min-height:120px;margin:18px 0}.progress-track{position:absolute;inset:0;border-radius:999px;overflow:hidden;background:linear-gradient(to bottom,#329a67 0%,#80b45a 38%,#d6b64d 65%,#db8947 82%,#ce5145 100%)}.progress-fill{position:absolute;top:0;left:0;width:100%;height:0;background:var(--line);transition:height .3s}.progress-marker{position:absolute;top:0;left:50%;width:16px;height:16px;display:grid;place-items:center;transform:translate(-50%,-50%);color:var(--route-color);pointer-events:none;transition:top .3s}.progress-marker svg{width:16px;height:16px;fill:currentColor;stroke:var(--surface);stroke-width:1;stroke-linejoin:round;paint-order:stroke fill}
+    .progress-ticks{position:absolute;inset:0}.progress-tick{position:absolute;left:-4px;right:-4px;height:1px;color:var(--muted);pointer-events:none}.progress-tick::after{content:"";display:block;border-top:1px solid currentColor;opacity:.45}.progress-tick span{position:absolute;right:calc(100% + 5px);top:0;transform:translateY(-50%);font-family:"Segoe UI",sans-serif;font-size:14px;font-weight:500;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}.progress-marker{z-index:1}
+    .notice-panel{display:flex;flex-direction:column;padding:28px 29px 24px}.notice-heading{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding-bottom:21px}.notice-heading svg{height:20px;width:20px;stroke:var(--accent);fill:none;stroke-width:1.5}.notice-heading h2{font-size:20px;font-weight:600;margin:0}.notice-count{font-size:12px;color:var(--muted);margin-left:auto}.notice-list{list-style:none;counter-reset:notices;display:flex;flex-direction:column;gap:24px;padding:25px 0;margin:0;flex:1}.notice-list li{display:flex;align-items:flex-start;gap:13px;line-height:1.9;font-size:18px;overflow-wrap:anywhere;white-space:pre-wrap}.notice-list li:before{counter-increment:notices;content:counter(notices,decimal-leading-zero);font-family:"Segoe UI",sans-serif;font-size:14px;font-weight:600;line-height:34.2px;color:var(--muted);flex:0 0 20px}.notice-empty{font-size:18px;color:var(--muted);line-height:1.8;margin:26px 0}.notice-footer{display:flex;align-items:center;gap:7px;padding-top:18px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.notice-footer svg{height:14px;width:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+    .below-board{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 2px;font-size:12px;color:var(--muted)}.sound-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.sound-controls button{font-size:12px;min-height:32px;font-weight:400;padding:5px 8px}.sound-controls .sound-button{border-color:transparent;background:transparent;color:var(--muted)}.sound-controls .sound-button.enabled{color:var(--accent)}.footnote{display:flex;gap:7px;align-items:center}.footnote svg{height:14px;width:14px;stroke:currentColor;fill:none;stroke-width:1.5}.site-footer{display:flex;align-items:center;justify-content:center;gap:9px;font-size:11px;color:#98a19b;padding:15px 0 4px}.site-footer span+span:before{content:"·";margin-right:9px}
+    dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:0;box-shadow:var(--shadow)}dialog::backdrop{background:#142d2860;backdrop-filter:blur(3px)}.settings-dialog{width:min(480px,calc(100% - 24px));max-height:calc(100dvh - 32px);border-radius:14px}.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:21px 25px;border-bottom:1px solid var(--line)}.dialog-head h2{font-size:18px;margin:0;font-weight:650}.dialog-head p{font-size:12px;color:var(--muted);margin:5px 0 0}.settings-form{padding:23px 25px 25px}.field{display:block;margin-bottom:19px}.field-label{display:block;font-size:13px;font-weight:600;margin-bottom:8px}.field input,.field textarea,.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);font-size:14px;min-width:0}.field textarea{resize:vertical;min-height:133px;line-height:1.7}.field-hint{font-size:11px;color:var(--muted);line-height:1.6;margin:7px 0 0}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check-field{display:flex;align-items:center;gap:9px;font-size:13px;margin:0 0 17px;cursor:pointer}.check-field input{accent-color:var(--accent);width:16px;height:16px}.form-error{font-size:12px;color:var(--danger);line-height:1.6;margin:0 0 14px}.form-actions{display:flex;gap:10px;justify-content:flex-end;border-top:1px solid var(--line);padding-top:20px}.alarm-dialog{width:min(440px,calc(100% - 32px));border-radius:16px;padding:37px;text-align:center}.alarm-symbol{width:52px;height:52px;background:var(--soft);border-radius:50%;margin:0 auto 18px;display:grid;place-items:center}.alarm-symbol svg{height:26px;width:26px;stroke:var(--accent);fill:none;stroke-width:1.6}.alarm-dialog h2{font-size:27px;margin:0 0 12px}.alarm-dialog p{color:var(--muted);font-size:14px;line-height:1.8;overflow-wrap:anywhere;margin:0 0 24px}.alarm-dialog button{width:100%}.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:10;border-radius:9px;background:#243e35;color:#fff;padding:12px 19px;max-width:calc(100% - 32px);font-size:13px;line-height:1.6;text-align:center;box-shadow:var(--shadow);width:max-content}
+    body[data-phase="ended"] .status{background:#eef0ee;color:#6c7770}body[data-phase="ended"] .progress-marker{color:var(--muted)}body[data-warning="true"] .countdown-area{--route-color:var(--danger)}html[data-theme="dark"]{color-scheme:dark;--bg:#131d1a;--surface:#1b2822;--ink:#e0eae3;--muted:#95a79b;--line:#314138;--accent:#91c4a5;--soft:#23382c;--danger:#f19d89;--shadow:0 20px 80px #0005}html[data-theme="dark"] .primary{color:#14271c;background:#91c4a5}html[data-theme="dark"] .primary:hover{background:#acd7bb}html[data-theme="dark"] .status{background:#2a4032}html[data-theme="dark"] body[data-phase="ended"] .status{background:#303d34;color:#b2beb5}html[data-embed="true"] .brand,html[data-embed="true"] .edition,html[data-embed="true"] .site-footer{display:none}html[data-embed="true"] .toolbar{justify-content:flex-end;height:64px}
+    html:fullscreen .brand,html:fullscreen .edition,html:fullscreen #export-button,html:fullscreen .below-board{display:none}html:fullscreen .toolbar{position:fixed;top:24px;right:32px;z-index:2;height:auto;padding:0;border:0;background:transparent}html:fullscreen .workspace{position:relative;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:1680px;min-height:100svh;padding:64px 40px 56px}html:fullscreen .exam-heading{flex-shrink:0;padding-right:0;margin-bottom:28px;min-height:56px;align-items:center}html:fullscreen .status{margin:0}html:fullscreen .site-footer{position:absolute;bottom:20px;left:0;right:0;display:flex;padding:0;font-size:12px;line-height:1.6}html:fullscreen .board{flex:0 0 auto;min-height:clamp(440px,60svh,680px)}html:fullscreen .clock{font-size:clamp(42px,19cqi,210px)}
+    #exam-day{display:inline-flex;gap:14px;white-space:nowrap}
+    html:fullscreen #settings-button{display:none}
+    @media(min-width:1600px){.workspace{padding-top:42px}.notice-list{gap:26px}.exam-heading{margin-bottom:32px}}
+    @media(max-width:1050px){.toolbar{padding:0 26px}.workspace{padding:30px 26px 16px}.exam-title-row{column-gap:20px}.board{grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:16px}.notice-panel{padding:24px 22px}.notice-list{gap:17px}.edition{display:none}.clock-main{padding:33px 12px}.below-board{align-items:flex-start}.footnote{font-size:11px;padding-top:8px}}
+    @media(max-width:760px){.toolbar{padding:0 18px;height:68px;gap:10px}.brand{gap:10px}.wordmark{font-size:21px}.brand-name{font-size:12px}.toolbar-actions{gap:6px}.toolbar-actions button{padding:8px 10px;min-height:36px}.button-text{display:none}.workspace{padding:25px 18px 16px}.exam-heading{align-items:flex-start;gap:12px;margin-bottom:22px}.exam-title{font-size:27px}.exam-title-row{gap:10px 18px}.schedule{font-size:17px;gap:7px 12px}.schedule .divider{display:none}.status{font-size:10px;gap:6px;padding:7px 9px;margin-top:4px}.board{grid-template-columns:minmax(0,1fr);gap:17px;min-height:0}.clock-panel{min-height:370px;padding-right:62px}.clock-main{padding:27px 6px}.section-label{font-size:14px}.clock{margin:16px 0}.clock-date{font-size:14px;letter-spacing:0}.countdown-area{top:24px;right:10px;bottom:24px;width:42px}.route-time{font-size:12px}.progress-tick span{font-size:12px}.progress{width:10px}.progress-marker{width:14px;height:14px}.progress-marker svg{width:14px;height:14px}.notice-panel{padding:23px 25px}.notice-heading{padding-bottom:17px}.notice-heading h2{font-size:18px}.notice-list{gap:16px;padding:20px 0}.notice-list li{font-size:16px;line-height:1.8}.notice-list li:before{font-size:12px;line-height:28.8px}.notice-empty{font-size:16px}.below-board{flex-direction:column;gap:8px;padding:13px 0}.footnote{padding:0 8px}.site-footer{padding-top:10px}.settings-form{padding:20px}.dialog-head{padding:18px 20px}}
+    @media(max-width:370px){.brand-divider,.brand-name{display:none}.workspace{padding-left:12px;padding-right:12px}.exam-title{font-size:24px}.schedule{font-size:16px}.field-row{grid-template-columns:1fr}.alarm-dialog{padding:28px}}
+    @media(max-width:760px){html:fullscreen .toolbar{top:18px;right:16px}html:fullscreen .workspace{justify-content:flex-start;padding:76px 16px 64px}html:fullscreen .exam-heading{padding-right:0;align-items:flex-start;margin-bottom:22px}html:fullscreen .board{min-height:0}html:fullscreen .clock-panel{min-height:340px}}
+    @media(min-width:761px) and (max-height:700px){html:fullscreen .workspace{padding:64px 26px 56px}html:fullscreen .exam-heading{margin-bottom:20px}html:fullscreen .board{min-height:360px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="brand"><span class="wordmark">QuickSo</span><span class="brand-divider"></span><span class="brand-name">考试时钟</span></div>
+    <div class="toolbar-actions">
+      <span class="edition" id="edition">在线版</span>
+      <button id="export-button" title="导出包含当前设置的单个 HTML 文件" aria-label="导出离线 HTML"><svg viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 15v5h16v-5"/></svg><span class="button-text">导出离线版</span></button>
+      <button id="fullscreen-button" title="全屏显示" aria-label="全屏显示"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg><span class="button-text" id="fullscreen-label">全屏显示</span></button>
+      <button id="settings-button" class="primary" title="考试设置" aria-label="考试设置"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="3" fill="currentColor" stroke="none"/></svg><span class="button-text">考试设置</span></button>
+    </div>
+  </header>
+  <main class="workspace">
+    <section class="exam-heading" aria-label="考试信息">
+      <div class="exam-identity"><div class="exam-title-row"><h1 class="exam-title" id="exam-title">考试倒计时与考场时钟</h1><div class="schedule"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18"/></svg><span id="exam-day"><span id="exam-calendar"></span><span id="exam-weekday"></span></span></span><span class="divider"></span><span id="exam-schedule"></span><span class="divider"></span><span id="exam-duration"></span></div></div></div>
+      <div class="status" role="status"><span class="status-dot"></span><span id="phase-label">准备就绪</span></div>
+    </section>
+    <div class="board">
+      <section class="clock-panel" aria-label="当前时间">
+        <div class="clock-main"><div class="clock-heading"><h2 class="section-label">当前时间</h2><p class="clock-date" id="clock-date"><span id="clock-calendar"></span><span id="clock-weekday"></span></p></div><div class="clock" id="clock" role="timer" aria-label="当前时间" aria-live="off">00:00:00</div></div>
+        <div class="countdown-area" aria-label="考试进度">
+          <div class="sr-only"><span id="countdown-label">距考试开始</span><span id="countdown" role="timer" aria-label="考试倒计时" aria-live="off">00:00:00</span></div>
+          <span class="route-time" id="start-time">00:00</span>
+          <div class="progress" role="progressbar" aria-label="考试进度" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress">
+            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+            <div class="progress-ticks" id="progress-ticks" aria-hidden="true"></div>
+            <div class="progress-marker" id="progress-marker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 21-8-17 8 4 8-4z"/></svg></div>
+          </div>
+          <span class="route-time" id="end-time">00:00</span>
+        </div>
+      </section>
+      <section class="notice-panel" aria-labelledby="notice-title"><div class="notice-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H5v17h14V4h-3M8 3h8v4H8zM8 11h8m-8 4h6"/></svg><h2 id="notice-title">考试须知</h2><span class="notice-count" id="notice-count"></span></div><ol class="notice-list" id="notice-list"></ol><p class="notice-empty" id="notice-empty" hidden>请保持安静，认真作答。</p><div class="notice-footer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 7v5c0 5 9 9 9 9s9-4 9-9V7zM8 12l3 3 5-6"/></svg>诚信应考，沉着作答</div></section>
+    </div>
+    <div class="below-board"><div class="sound-controls"><button id="sound-button" class="sound-button" title="点击启用结束提示音"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4zM15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></svg><span id="sound-label">启用结束提示音</span></button><button class="quiet" id="test-sound">试听</button></div><span class="footnote" id="storage-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span id="storage-label">设置自动保存在本机</span></span></div>
+    <footer class="site-footer"><span>exam.quickso.top</span><span id="time-source" title="时钟与倒计时以设备系统时间为准">以本机时间为准</span></footer>
+  </main>
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-head"><div><h2 id="settings-title">考试设置</h2><p>设置好本场考试，即可开始投屏。</p></div><button class="quiet icon-button" id="close-settings" type="button" aria-label="关闭考试设置" title="关闭"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div><form class="settings-form" id="settings-form"><label class="field"><span class="field-label">考试名称</span><input name="title" id="input-title" maxlength="100" required placeholder="例如：期中考试 · 语文"></label><label class="field"><span class="field-label">开始时间</span><input type="datetime-local" name="start" id="input-start" step="60" required></label><label class="field"><span class="field-label">结束时间</span><input type="datetime-local" name="end" id="input-end" step="60" required><span class="field-hint">使用本机时区，支持跨天考试。</span></label><label class="field"><span class="field-label">考试须知</span><textarea name="notices" id="input-notices" maxlength="5000" placeholder="每行填写一条须知"></textarea><span class="field-hint">每行一条，会自动编号；留空则显示简短提示。</span></label><label class="check-field"><input type="checkbox" id="input-sound" name="sound">考试结束时播放提示音</label><p class="field-hint" style="margin:-8px 0 20px">结束时同时显示醒目提醒。提示音需在当前页面点击启用，建议投屏前试听并保持页面打开。</p><p class="form-error" id="form-error" role="alert" hidden></p><div class="form-actions"><button type="button" id="cancel-settings">取消</button><button class="primary" type="submit">保存设置</button></div></form></dialog>
+  <dialog class="alarm-dialog" id="alarm-dialog" aria-labelledby="alarm-title"><div class="alarm-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div><h2 id="alarm-title">考试时间到</h2><p id="alarm-description">请停止作答，有序交卷。</p><button class="primary" id="dismiss-alarm">我知道了，停止提醒</button></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><p>QuickSo 考试时钟支持考试名称、起止时间、考试须知、大字时钟、全屏倒计时、结束提醒及单 HTML 离线导出。请启用 JavaScript 后设置考试并使用时钟功能。</p></noscript>
+  <script type="application/json" id="exam-config">null</script>
+  <script>
+  (() => {
+    "use strict";
+    const $ = (id) => document.getElementById(id);
+    const pad = (value) => String(value).padStart(2, "0");
+    const toLocalInput = (value) => {
+      const date = new Date(value);
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:00`;
+    };
+    const defaultStart = Math.ceil(Date.now() / 300000) * 300000;
+    const defaults = { title: "期中考试 · 语文", start: toLocalInput(defaultStart), end: toLocalInput(defaultStart + 7200000), notices: "请将手机等电子设备关闭，并放至指定位置。\n请在答题前准确填写姓名、班级及考号。\n考试期间保持安静，独立思考，诚信作答。\n考试结束后请停止作答，听从监考老师安排。", warningMinutes: 5, theme: "light", sound: true };
+    const exported = document.documentElement.dataset.exported === "true";
+    const storageKey = "quickso-exam-v1" + (exported ? `-${document.documentElement.dataset.exportId}` : "");
+    let storageAvailable = true;
+    const validConfig = (value) => value && typeof value.title === "string" && value.title.trim().length > 0 && value.title.length <= 100 && typeof value.start === "string" && /^\d{4}-\d\d-\d\dT\d\d:\d\d(?::\d\d)?$/.test(value.start) && typeof value.end === "string" && /^\d{4}-\d\d-\d\dT\d\d:\d\d(?::\d\d)?$/.test(value.end) && Number.isFinite(new Date(value.start).getTime()) && new Date(value.end).getTime() > new Date(value.start).getTime() && typeof value.notices === "string" && value.notices.length <= 5000 && [0, 5, 10, 15].includes(value.warningMinutes) && ["light", "dark"].includes(value.theme) && typeof value.sound === "boolean";
+    const normalizeConfig = (value) => {
+      if (!validConfig(value)) return null;
+      const normalized = { ...value, start: `${value.start.slice(0, 16)}:00`, end: `${value.end.slice(0, 16)}:00` };
+      return validConfig(normalized) ? normalized : null;
+    };
+    let embedded;
+    try { embedded = JSON.parse($("exam-config").textContent); } catch { /* Use defaults if the embedded configuration is invalid. */ }
+    let config = normalizeConfig(embedded) || defaults;
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+      config = normalizeConfig(saved) || config;
+    } catch { storageAvailable = false; }
+    let previousPhase;
+    let alarmFired = false;
+    let audioContext;
+    let audioReady = false;
+    let audioNodes = [];
+    let toastTimeout;
+    const dateFormat = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" });
+    const shortDateFormat = new Intl.DateTimeFormat("zh-CN", { month: "long", day: "numeric" });
+    const clockFormat = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+    const timeText = (date) => `${pad(date.getHours())}:${pad(date.getMinutes())}${date.getSeconds() ? `:${pad(date.getSeconds())}` : ""}`;
+    const sameDay = (a, b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+    const durationText = (milliseconds) => {
+      const seconds = Math.max(0, Math.ceil(milliseconds / 1000));
+      return `${pad(Math.floor(seconds / 3600))}:${pad(Math.floor(seconds / 60) % 60)}:${pad(seconds % 60)}`;
+    };
+    function toast(message) {
+      clearTimeout(toastTimeout);
+      $("toast").textContent = message;
+      $("toast").hidden = false;
+      toastTimeout = setTimeout(() => { $("toast").hidden = true; }, 4500);
+    }
+    function persist() {
+      try { localStorage.setItem(storageKey, JSON.stringify(config)); storageAvailable = true; }
+      catch { storageAvailable = false; }
+      $("storage-label").textContent = storageAvailable ? "设置已保存在本机" : "本机存储不可用，请导出离线版保存设置";
+    }
+    function updateSoundLabel() {
+      const ready = config.sound && audioReady && audioContext?.state === "running";
+      $("sound-label").textContent = !config.sound ? "结束提示音已关闭" : ready ? "结束提示音已启用" : "启用结束提示音";
+      $("sound-button").classList.toggle("enabled", !!ready);
+      $("sound-button").setAttribute("aria-pressed", String(!!ready));
+      $("sound-button").title = ready ? "点击关闭结束提示音" : "点击启用结束提示音";
+    }
+    async function unlockAudio() {
+      try {
+        const Audio = window.AudioContext || window.webkitAudioContext;
+        if (!Audio) throw new Error("Audio unavailable");
+        if (!audioContext || audioContext.state === "closed") {
+          audioContext = new Audio();
+          audioContext.addEventListener("statechange", updateSoundLabel);
+        }
+        await audioContext.resume();
+        audioReady = audioContext.state === "running";
+        updateSoundLabel();
+        if (!audioReady) throw new Error("Audio suspended");
+        return true;
+      } catch {
+        audioReady = false;
+        updateSoundLabel();
+        toast("当前浏览器无法启用声音，考试结束时仍会显示提醒。");
+        return false;
+      }
+    }
+    function stopSound() {
+      audioNodes.forEach((node) => { try { node.stop(); } catch { /* Already ended. */ } });
+      audioNodes = [];
+    }
+    function playSound(rounds = 1) {
+      stopSound();
+      if (!audioReady || audioContext?.state !== "running") return;
+      const start = audioContext.currentTime + .03;
+      for (let round = 0; round < rounds; round++) {
+        [660, 880, 660].forEach((frequency, index) => {
+          const at = start + round * 2 + index * .32;
+          const oscillator = audioContext.createOscillator();
+          const gain = audioContext.createGain();
+          oscillator.type = "sine";
+          oscillator.frequency.value = frequency;
+          gain.gain.setValueAtTime(0, at);
+          gain.gain.linearRampToValueAtTime(.22, at + .025);
+          gain.gain.exponentialRampToValueAtTime(.001, at + .26);
+          oscillator.connect(gain); gain.connect(audioContext.destination);
+          oscillator.start(at); oscillator.stop(at + .28);
+          oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); audioNodes = audioNodes.filter((node) => node !== oscillator); };
+          audioNodes.push(oscillator);
+        });
+      }
+    }
+    function notifyEnd() {
+      alarmFired = true;
+      if ($("settings-dialog").open) $("settings-dialog").close();
+      $("alarm-description").textContent = `${config.title}已结束，请停止作答，有序交卷。`;
+      if (!$("alarm-dialog").open) $("alarm-dialog").showModal();
+      if (config.sound) playSound(4);
+    }
+    function tick() {
+      const now = new Date();
+      const start = new Date(config.start).getTime();
+      const end = new Date(config.end).getTime();
+      const current = now.getTime();
+      const phase = current < start ? "waiting" : current < end ? "active" : "ended";
+      const remaining = phase === "waiting" ? start - current : Math.max(0, end - current);
+      $("clock").textContent = clockFormat.format(now);
+      const dateParts = dateFormat.formatToParts(now);
+      $("clock-calendar").textContent = dateParts.filter((part) => part.type !== "weekday").map((part) => part.value).join("").trim();
+      $("clock-weekday").textContent = dateParts.find((part) => part.type === "weekday").value;
+      $("countdown").textContent = durationText(remaining);
+      $("countdown-label").textContent = phase === "waiting" ? "距考试开始" : phase === "active" ? "距考试结束" : "考试已结束";
+      $("phase-label").textContent = phase === "waiting" ? "等待开考" : phase === "active" ? "考试进行中" : "考试已结束";
+      document.body.dataset.phase = phase;
+      document.body.dataset.warning = String(phase === "active" && config.warningMinutes > 0 && remaining <= config.warningMinutes * 60000);
+      const progress = Math.min(100, Math.max(0, (current - start) / (end - start) * 100));
+      $("progress-fill").style.height = `${progress}%`;
+      $("progress-marker").style.top = `${progress}%`;
+      $("progress").setAttribute("aria-valuenow", String(Math.round(progress)));
+      $("progress").setAttribute("aria-valuetext", `考试已完成 ${Math.round(progress)}%`);
+      if (previousPhase && previousPhase !== "ended" && phase === "ended" && !alarmFired) notifyEnd();
+      previousPhase = phase;
+    }
+    function renderProgressTicks(duration) {
+      const halfMinutes = Number((duration / 120000).toFixed(2));
+      const ticks = new Map([[duration / 2, String(halfMinutes)]]);
+      for (const minutes of [30, 10]) {
+        const remaining = minutes * 60000;
+        if (remaining < duration && !ticks.has(remaining)) ticks.set(remaining, String(minutes));
+      }
+      $("progress-ticks").replaceChildren();
+      [...ticks].sort(([a], [b]) => b - a).forEach(([remaining, label]) => {
+        const tick = document.createElement("div");
+        tick.className = "progress-tick";
+        tick.style.top = `${(1 - remaining / duration) * 100}%`;
+        const text = document.createElement("span");
+        text.textContent = label;
+        tick.append(text);
+        $("progress-ticks").append(tick);
+      });
+    }
+    function renderConfig() {
+      const start = new Date(config.start);
+      const end = new Date(config.end);
+      document.title = exported || location.protocol === "file:" ? `${config.title} · QuickSo 考试时钟` : "考试倒计时与考场时钟 - 全屏考试时钟、离线导出 | QuickSo";
+      document.documentElement.dataset.theme = config.theme;
+      $("exam-title").textContent = config.title;
+      const dateParts = dateFormat.formatToParts(start);
+      $("exam-calendar").textContent = dateParts.filter((part) => part.type !== "weekday").map((part) => part.value).join("").trim();
+      $("exam-weekday").textContent = dateParts.find((part) => part.type === "weekday").value;
+      $("exam-schedule").textContent = `${timeText(start)} — ${sameDay(start, end) ? "" : `${shortDateFormat.format(end)} `}${timeText(end)}`;
+      const minutes = Math.round((end - start) / 60000 * 100) / 100;
+      $("exam-duration").textContent = `共 ${minutes} 分钟`;
+      renderProgressTicks(end - start);
+      $("start-time").textContent = timeText(start);
+      $("end-time").textContent = `${sameDay(start, end) ? "" : `${shortDateFormat.format(end)} `}${timeText(end)}`;
+      $("notice-list").replaceChildren();
+      const notices = config.notices.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+      notices.forEach((text) => { const li = document.createElement("li"); li.textContent = text; $("notice-list").append(li); });
+      $("notice-count").textContent = notices.length ? `${pad(notices.length)} 条` : "";
+      $("notice-empty").hidden = notices.length > 0;
+      $("notice-list").hidden = notices.length === 0;
+      updateSoundLabel();
+      tick();
+    }
+    function openSettings() {
+      $("input-title").value = config.title;
+      $("input-start").value = config.start.slice(0, 16);
+      $("input-end").value = config.end.slice(0, 16);
+      $("input-notices").value = config.notices;
+      $("input-sound").checked = config.sound;
+      $("form-error").hidden = true;
+      $("settings-dialog").showModal();
+    }
+    $("settings-button").addEventListener("click", openSettings);
+    for (const id of ["close-settings", "cancel-settings"]) $(id).addEventListener("click", () => $("settings-dialog").close());
+    $("settings-dialog").addEventListener("click", (event) => {
+      if (event.target !== $("settings-dialog")) return;
+      const bounds = $("settings-dialog").getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) $("settings-dialog").close();
+    });
+    $("settings-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const next = normalizeConfig({ title: $("input-title").value.trim(), start: $("input-start").value, end: $("input-end").value, notices: $("input-notices").value, warningMinutes: config.warningMinutes, theme: config.theme, sound: $("input-sound").checked });
+      if (!next) {
+        $("form-error").textContent = !$("input-title").value.trim() ? "请填写考试名称。" : "请检查时间：结束时间必须晚于开始时间。";
+        $("form-error").hidden = false;
+        return;
+      }
+      const timeChanged = next.start !== config.start || next.end !== config.end;
+      config = next;
+      if (timeChanged) { previousPhase = undefined; alarmFired = false; stopSound(); }
+      persist(); renderConfig();
+      $("settings-dialog").close();
+      if (config.sound) void unlockAudio();
+      toast(storageAvailable ? "考试设置已保存" : "设置已应用，请导出离线版保存");
+    });
+    $("sound-button").addEventListener("click", async () => {
+      if (config.sound && audioReady && audioContext?.state === "running") { config.sound = false; stopSound(); }
+      else { config.sound = true; await unlockAudio(); }
+      persist(); updateSoundLabel();
+    });
+    $("test-sound").addEventListener("click", async () => {
+      if (await unlockAudio()) { playSound(); toast("正在试听；结束提示音为四组提示铃声。"); }
+    });
+    $("dismiss-alarm").addEventListener("click", () => $("alarm-dialog").close());
+    $("alarm-dialog").addEventListener("close", stopSound);
+    $("alarm-dialog").addEventListener("cancel", stopSound);
+    function fullscreenChanged() {
+      const active = !!document.fullscreenElement;
+      const label = active ? "退出全屏" : "全屏显示";
+      $("fullscreen-label").textContent = label;
+      $("fullscreen-button").title = label;
+      $("fullscreen-button").setAttribute("aria-label", label);
+      $("fullscreen-button").setAttribute("aria-pressed", String(active));
+    }
+    $("fullscreen-button").addEventListener("click", async () => {
+      if (config.sound) void unlockAudio();
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else if (document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
+        else toast("当前浏览器不支持一键全屏，可尝试浏览器的全屏功能。");
+      } catch { toast("未能进入全屏，请使用浏览器全屏功能，或在独立窗口打开。"); }
+    });
+    document.addEventListener("fullscreenchange", fullscreenChanged);
+    function exportHtml() {
+      const clone = document.documentElement.cloneNode(true);
+      clone.dataset.exported = "true";
+      clone.dataset.exportId = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+      delete clone.dataset.embed;
+      clone.querySelector("#exam-config").textContent = JSON.stringify(config).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
+      clone.querySelectorAll("dialog").forEach((dialog) => dialog.removeAttribute("open"));
+      clone.querySelector("#toast").hidden = true;
+      clone.querySelector("#form-error").hidden = true;
+      clone.querySelector("#edition").textContent = "离线版";
+      clone.querySelector('meta[name="robots"]').setAttribute("content", "noindex,nofollow");
+      clone.querySelector("#fullscreen-label").textContent = "全屏显示";
+      clone.querySelector("#sound-label").textContent = config.sound ? "启用结束提示音" : "结束提示音已关闭";
+      const blob = new Blob(["<!doctype html>\n" + clone.outerHTML], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = `${config.title.replace(/[<>:"/\\|?*\u0000-\u001f]/g, "_").replace(/[. ]+$/g, "").slice(0, 70) || "考试时钟"}-离线版.html`;
+      document.body.append(anchor); anchor.click(); anchor.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 30000);
+      toast("离线版已导出，双击 HTML 即可使用。打开后请启用提示音。");
+    }
+    $("export-button").addEventListener("click", exportHtml);
+    const embed = new URLSearchParams(location.search).get("embed") === "1";
+    document.documentElement.dataset.embed = String(embed);
+    $("edition").textContent = exported || location.protocol === "file:" ? "离线版" : "在线版";
+    $("storage-label").textContent = storageAvailable ? exported ? "离线可用 · 设置保存在本机" : "设置自动保存在本机" : "本机存储不可用，请导出离线版保存设置";
+    renderConfig(); fullscreenChanged();
+    setInterval(tick, 250);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) { tick(); updateSoundLabel(); } });
+    window.addEventListener("pageshow", tick);
+  })();
+  </script>
+</body>
+</html>
